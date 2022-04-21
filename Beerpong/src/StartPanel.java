@@ -17,29 +17,6 @@ public class StartPanel extends JPanel {
         namenseingabe.addActionListener(actionEingabeDerNamen);
         add(namenseingabe);
         updateUI();
-        System.out.println("ahshdhha");System.out.println("ahshdhha");
-        System.out.println("ahshdhha");
-        System.out.println("ahshdhha");System.out.println("ahshdhha");
-        System.out.println("ahshdhha");
-        System.out.println("ahshdhha");
-        System.out.println("ahshdhha");
-        System.out.println("ahshdhha");
-        System.out.println("ahshdhha");
-        System.out.println("ahshdhha");
-        System.out.println("ahshdhha");
-        System.out.println("ahshdhha");
-        System.out.println("ahshdhha");
-        System.out.println("ahshdhha");
-        System.out.println("ahshdhha");
-        System.out.println("ahshdhha");
-        System.out.println("ahshdhha");
-        System.out.println("ahshdhha");System.out.println("ahshdhha");
-        System.out.println("ahshdhha");
-        System.out.println("ahshdhha");
-
-
-
-
     }
 
     public static JLabel getPlayers(int x){
@@ -48,7 +25,7 @@ public class StartPanel extends JPanel {
     private ActionListener actionEingabeDerNamen = new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
-            if(!(spielerzahl >19)){ //Das neu xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+            if(!(spielerzahl >19)){
                 JTextField temp = (JTextField) e.getSource();
                 JLabel neuerSpieler = new JLabel();
                 neuerSpieler.setText(temp.getText());
