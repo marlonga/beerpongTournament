@@ -49,4 +49,13 @@ public class StartPanel extends JPanel {
             }
         }
     };
+    private ActionListener actionMinusSpieler = new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            if(spielerzahl < 0){
+                labelSpieler.remove(labelSpieler.size());
+                updateUI();
+            }
+        }
+    };
 }
