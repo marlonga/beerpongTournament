@@ -9,16 +9,26 @@ public class StartPanel extends JPanel {
     private static ArrayList<JLabel> labelSpieler = new ArrayList<>();
     private static int spielerzahl = 0;
     private int playercount = 0;
+    String comboBoxSize[] = {"1","2","3","4"};
     public StartPanel() {
         setLayout(null);
         setBounds(0,0,500,500);
         JTextField namenseingabe = new JTextField();
         namenseingabe.setBounds(10,30,100,20);
         namenseingabe.addActionListener(actionEingabeDerNamen);
+        JComboBox teamSize = new JComboBox(comboBoxSize);
+        teamSize.setBounds(140,30,100,20);
+        teamSize.addActionListener(actionTeamSize);
         add(namenseingabe);
+        add(teamSize);
         updateUI();
-
     }
+    private ActionListener actionTeamSize = new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+
+        }
+    };
 
     public static JLabel getPlayers(int x){
         return labelSpieler.get(x);
@@ -26,7 +36,7 @@ public class StartPanel extends JPanel {
     private ActionListener actionEingabeDerNamen = new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
-            if(!(spielerzahl >19)){ //Das neu xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+            if(!(spielerzahl >19)){
                 JTextField temp = (JTextField) e.getSource();
                 JLabel neuerSpieler = new JLabel();
                 neuerSpieler.setText(temp.getText());
