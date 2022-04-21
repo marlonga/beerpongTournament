@@ -19,15 +19,6 @@ public class StartPanel extends JPanel {
         namenseingabe.addActionListener(actionEingabeDerNamen);
         JComboBox teamSize = new JComboBox(comboBoxSize);
         teamSize.setBounds(140,30,100,20);
-        teamSize.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-               TeamSize = teamSize.getSelectedIndex();
-            }//musste den aactionlistener hierher packen... ging außerhalb von startpanel nicht anders maybe hast du ne idee wie des gehen könnte
-             // wollte teamSize.getSelectedIndex verwenden geht aber nicht außerhalb
-        });
-
-
         add(namenseingabe);
         add(teamSize);
         updateUI();
@@ -53,7 +44,7 @@ public class StartPanel extends JPanel {
             }
         }
     };
-    private ActionListener actionMinusSpieler = new ActionListener() {
+    private ActionListener actionMinusSpieler = new ActionListener() { //inProgress
         @Override
         public void actionPerformed(ActionEvent e) {
             if(spielerzahl < 0){
@@ -62,4 +53,5 @@ public class StartPanel extends JPanel {
             }
         }
     };
+
 }
