@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Array;
@@ -7,6 +8,7 @@ import java.util.Stack;
 
 public class StartPanel extends JPanel {
     private static ArrayList<JLabel> labelSpieler = new ArrayList<>();
+    private static ArrayList<JButton> minusSpieler = new ArrayList<>();
     private static int spielerzahl = 0;
     private int playercount = 0;
     String comboBoxSize[] = {"1","2","3","4"};
@@ -40,8 +42,17 @@ public class StartPanel extends JPanel {
                 neuerSpieler.setBounds(10,50+25*spielerzahl,100,20);
                 labelSpieler.add(neuerSpieler);
                 add(labelSpieler.get(spielerzahl));
-                spielerzahl++;
+
                 temp.setText("");
+
+                JButton neuesMinus = new JButton();
+                neuesMinus.setBounds(120,57+25*spielerzahl,15,5);
+                neuesMinus.setBackground(Color.RED);
+                neuesMinus.addActionListener(actionMinusSpieler);
+                minusSpieler.add(neuesMinus);
+                add(minusSpieler.get(spielerzahl));
+
+                spielerzahl++;
                 updateUI();
             }
         }
@@ -49,8 +60,9 @@ public class StartPanel extends JPanel {
     private ActionListener actionMinusSpieler = new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
-            if(spielerzahl < 0){
-                labelSpieler.remove(labelSpieler.size());
+            if(spielerzahl > 0){
+                JButton temp = (JButton) e.getSource();
+                remove(temp);
                 updateUI();
             }
         }
