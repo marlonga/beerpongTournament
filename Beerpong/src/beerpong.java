@@ -16,10 +16,7 @@ public class beerpong {
         mainframe.setLocation(100,100);
         mainframe.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         mainframe.add(mainpanel);
-        System.out.println("AHHASHHSAD");
-        System.out.println("AHHASHHSAD");
-        System.out.println("AHHASHHSAD");
-        System.out.println("AHHASHHSAD");
+
 
 
 
