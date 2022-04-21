@@ -23,6 +23,8 @@ public class StartPanel extends JPanel {
         add(teamSize);
         updateUI();
 
+
+
     }
 
     public static JLabel getPlayers(int x){
@@ -44,7 +46,7 @@ public class StartPanel extends JPanel {
             }
         }
     };
-    private ActionListener actionMinusSpieler = new ActionListener() { //inProgress
+    private ActionListener actionMinusSpieler = new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
             if(spielerzahl < 0){
@@ -53,5 +55,4 @@ public class StartPanel extends JPanel {
             }
         }
     };
-
 }

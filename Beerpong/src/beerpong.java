@@ -21,7 +21,7 @@ public class beerpong {
         switchToTournamentPanel.setText("start game");
         switchToTournamentPanel.setBounds(10, 10, 100, 20);
         switchToTournamentPanel.addActionListener(actionSwitchToTournement);
-        mainframe.add(switchToTournamentPanel);
+        mainpanel.add(switchToTournamentPanel);
 
         mainpanel.updateUI();
         mainframe.setVisible(true);
@@ -29,7 +29,8 @@ public class beerpong {
     static ActionListener actionSwitchToTournement = new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
-
+            mainframe.remove(mainpanel);
+            mainframe.add(tournamentpanel);
         }
     };
 }

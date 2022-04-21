@@ -10,6 +10,7 @@ public class TournamentPanel extends JPanel {
         namenseingabe.setBounds(10, 30, 100, 20);
         add(namenseingabe);
         updateUI();
+
     }
 
     private static ActionListener actionEingabeDerNamen = new ActionListener() {
