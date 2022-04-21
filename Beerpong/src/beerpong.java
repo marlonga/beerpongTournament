@@ -17,13 +17,6 @@ public class beerpong {
         mainframe.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         mainframe.add(mainpanel);
 
-
-
-
-
-
-
-
         JButton switchToTournamentPanel = new JButton();
         switchToTournamentPanel.setText("start game");
         switchToTournamentPanel.setBounds(10, 10, 100, 20);
@@ -36,15 +29,7 @@ public class beerpong {
     static ActionListener actionSwitchToTournement = new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
-            JComponent temp = (JComponent) e.getSource();
-            JFrame tempz = (JFrame) temp.getParent();
-            JComponent[] tempComp = (JComponent[]) tempz.getComponents();
-            for (JComponent x : tempComp ){
-                if(x.getName() == temp.getName())
-                {
-                    tempz.add(x);
-                }
-            }
+
         }
     };
 }
