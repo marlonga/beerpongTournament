@@ -48,16 +48,17 @@ public class StartPanel extends JPanel {
     private ActionListener actionEingabeDerNamen = new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
-            JTextField temp = (JTextField) e.getSource();
-            JLabel neuerSpieler = new JLabel();
-            neuerSpieler.setText(temp.getText());
-            neuerSpieler.setBounds(10,50+25*spielerzahl,100,20);
-            labelSpieler.add(neuerSpieler);
-            add(labelSpieler.get(spielerzahl));
-            spielerzahl++;
-            temp.setText("");
-            updateUI();
-
+            if(!(spielerzahl >19)){ //Das neu xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+                JTextField temp = (JTextField) e.getSource();
+                JLabel neuerSpieler = new JLabel();
+                neuerSpieler.setText(temp.getText());
+                neuerSpieler.setBounds(10,50+25*spielerzahl,100,20);
+                labelSpieler.add(neuerSpieler);
+                add(labelSpieler.get(spielerzahl));
+                spielerzahl++;
+                temp.setText("");
+                updateUI();
+            }
         }
     };
 }
