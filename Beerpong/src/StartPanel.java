@@ -17,28 +17,6 @@ public class StartPanel extends JPanel {
         namenseingabe.addActionListener(actionEingabeDerNamen);
         add(namenseingabe);
         updateUI();
-        System.out.println("ahshdhha");System.out.println("ahshdhha");
-        System.out.println("ahshdhha");
-        System.out.println("ahshdhha");System.out.println("ahshdhha");
-        System.out.println("ahshdhha");
-        System.out.println("ahshdhha");
-        System.out.println("ahshdhha");
-        System.out.println("ahshdhha");
-        System.out.println("ahshdhha");
-        System.out.println("ahshdhha");
-        System.out.println("ahshdhha");
-        System.out.println("ahshdhha");
-        System.out.println("ahshdhha");
-        System.out.println("ahshdhha");
-        System.out.println("ahshdhha");
-        System.out.println("ahshdhha");
-        System.out.println("ahshdhha");
-        System.out.println("ahshdhha");System.out.println("ahshdhha");
-        System.out.println("ahshdhha");
-        System.out.println("ahshdhha");
-
-
-
 
     }
 
