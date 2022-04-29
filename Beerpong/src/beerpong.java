@@ -31,6 +31,7 @@ public class beerpong {
         public void actionPerformed(ActionEvent e) {
             mainframe.remove(mainpanel);
             mainframe.add(tournamentpanel);
+            tournamentpanel.updateUI();
         }
     };
 }
