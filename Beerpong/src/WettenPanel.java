@@ -24,7 +24,12 @@ public class WettenPanel extends JPanel {
         setBounds(x, y, 200, 500);
         setMaximumSize(new Dimension(200, 500));
         setMinimumSize(new Dimension(200, 500));
+        JButton b= new JButton("click me");
+        b.setBounds(100,300,50,100);
+        b.addActionListener(onButtonResult);
         draw();
+
+        add(b);
         updateUI();
     }
 
@@ -46,10 +51,20 @@ public class WettenPanel extends JPanel {
             add(redButtons.get(i));
         }
     }
-    public ArrayList<String> whoWon(String color){
+    public ArrayList<String> whoWon(String color) {
         ArrayList<String> winners = new ArrayList<>();
-        for(int i = 0; i<blueButtons.size();i++){
-
+        if (color.equals("blue")) {
+            for (int i = 0; i < blueButtons.size(); i++) {
+                if (blueButtons.get(i).isEnabled()) {
+                    winners.add(playerLabels.get(i).getText());
+                }
+            }
+        } else if (color.equals("red")) {
+            for (int i = 0; i < redButtons.size(); i++) {
+                if (redButtons.get(i).isEnabled()) {
+                    winners.add(playerLabels.get(i).getText());
+                }
+            }
         }
         return winners;
     }
@@ -66,6 +81,13 @@ public class WettenPanel extends JPanel {
                 int y = redButtons.indexOf(temp);
                 blueButtons.get(y).setEnabled(false);
             }
+        }
+    };
+    ActionListener onButtonResult = new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            System.out.println(whoWon("red"));
+
         }
     };
 }
