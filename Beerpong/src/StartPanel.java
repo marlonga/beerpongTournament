@@ -24,9 +24,6 @@ public class StartPanel extends JPanel {
         add(namenseingabe);
         add(teamSize);
         updateUI();
-
-
-
     }
 
     public static JLabel getPlayers(int x){

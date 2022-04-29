@@ -10,7 +10,7 @@ public class WettenPanel extends JPanel {
     private String player1;
     private String player2;
 
-    WettenPanel(ArrayList<String> players, String player1, String player2,int x,int y){
+    public WettenPanel(ArrayList<String> players, String player1, String player2,int x,int y){
         this.players = players;
         this.player1 = player1;
         this.player2 = player2;
@@ -18,6 +18,7 @@ public class WettenPanel extends JPanel {
         setMaximumSize(new Dimension(200,500));
         setMinimumSize(new Dimension(200,500));
         draw();
+        updateUI();
     }
 
     public void draw(){
