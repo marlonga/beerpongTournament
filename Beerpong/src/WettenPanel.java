@@ -75,10 +75,12 @@ public class WettenPanel extends JPanel {
             JButton temp = (JButton) e.getSource();
             if(blueButtons.contains(temp)){
                 int x = blueButtons.indexOf(temp);
+                temp.setBackground(Color.BLUE);
                 redButtons.get(x).setEnabled(false);
             }
             else if(redButtons.contains(temp)){
                 int y = redButtons.indexOf(temp);
+                temp.setBackground(Color.RED);
                 blueButtons.get(y).setEnabled(false);
             }
         }
