@@ -39,13 +39,15 @@ public class WettenPanel extends JPanel {
             playerLabels.get(i).setBounds(20, 20 * i, 100, 20);
             add(playerLabels.get(i));
 
-            JButton tempx = new JButton("blue");
+            JButton tempx = new JButton();
             tempx.setBounds(60, 20 * i, 20, 20);
+            tempx.setBackground(Color.BLUE);
             blueButtons.add(tempx);
             blueButtons.get(i).addActionListener(buttonListener);
             add(blueButtons.get(i));
 
-            redButtons.add(new JButton("red"));
+            redButtons.add(new JButton());
+            redButtons.get(i).setBackground(Color.RED);
             redButtons.get(i).setBounds(90, 20 * i, 20, 20);
             redButtons.get(i).addActionListener(buttonListener);
             add(redButtons.get(i));
@@ -75,13 +77,13 @@ public class WettenPanel extends JPanel {
             JButton temp = (JButton) e.getSource();
             if(blueButtons.contains(temp)){
                 int x = blueButtons.indexOf(temp);
-                temp.setBackground(Color.BLUE);
                 redButtons.get(x).setEnabled(false);
+                redButtons.get(x).setBackground(Color.GRAY);
             }
             else if(redButtons.contains(temp)){
                 int y = redButtons.indexOf(temp);
-                temp.setBackground(Color.RED);
                 blueButtons.get(y).setEnabled(false);
+                blueButtons.get(y).setBackground(Color.GRAY);
             }
         }
     };
