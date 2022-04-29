@@ -11,8 +11,11 @@ public class beerpong {
 
     public static void main(String[] args) {
 
+        mainframe.setSize(new Dimension(850,700));
+        mainframe.setMinimumSize(new Dimension(840,700));
+        mainframe.setMaximumSize(new Dimension(860,700));
+
         mainframe.setLayout(null);
-        mainframe.setSize(500,500);
         mainframe.setLocation(100,100);
         mainframe.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         mainframe.add(mainpanel);

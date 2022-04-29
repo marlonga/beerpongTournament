@@ -3,11 +3,10 @@ import java.awt.*;
 
 public class GamePanel extends JPanel {
     public GamePanel () {
-        setSize(new Dimension(400,400));
-        JButton switchToTournamentPanel = new JButton();
-        switchToTournamentPanel.setText("test");
-        switchToTournamentPanel.setBounds(10, 10, 100, 20);
-        add(switchToTournamentPanel);
+        setSize(new Dimension(400,500));
+        setLocation(220,10);
+        setLayout(null);
+        setBackground( new Color(134,140,252));
         updateUI();
     }
 }
