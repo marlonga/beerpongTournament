@@ -1,5 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 public class WettenPanel extends JPanel {
@@ -35,11 +37,35 @@ public class WettenPanel extends JPanel {
             JButton tempx = new JButton("blue");
             tempx.setBounds(60, 20 * i, 20, 20);
             blueButtons.add(tempx);
+            blueButtons.get(i).addActionListener(buttonListener);
             add(blueButtons.get(i));
 
             redButtons.add(new JButton("red"));
             redButtons.get(i).setBounds(90, 20 * i, 20, 20);
+            redButtons.get(i).addActionListener(buttonListener);
             add(redButtons.get(i));
         }
     }
+    public ArrayList<String> whoWon(String color){
+        ArrayList<String> winners = new ArrayList<>();
+        for(int i = 0; i<blueButtons.size();i++){
+
+        }
+        return winners;
+    }
+
+    ActionListener buttonListener =new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            JButton temp = (JButton) e.getSource();
+            if(blueButtons.contains(temp)){
+                int x = blueButtons.indexOf(temp);
+                redButtons.get(x).setEnabled(false);
+            }
+            else if(redButtons.contains(temp)){
+                int y = redButtons.indexOf(temp);
+                blueButtons.get(y).setEnabled(false);
+            }
+        }
+    };
 }

@@ -7,7 +7,7 @@ import java.beans.PropertyChangeListener;
 public class beerpong {
     private static JFrame mainframe = new JFrame();
     private static JPanel mainpanel = new StartPanel();
-    private static JPanel tournamentpanel = new TournamentPanel();
+    private static TournamentPanel tournamentpanel = new TournamentPanel();
 
     public static void main(String[] args) {
 
