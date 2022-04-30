@@ -5,18 +5,20 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 public class WettenPanel extends JPanel {
-    private ArrayList<String> players;
+    private ArrayList<String> players = new ArrayList<>();
     private ArrayList<JLabel> playerLabels = new ArrayList<>();
     private ArrayList<JButton> blueButtons = new ArrayList<>();
     private ArrayList<JButton> redButtons = new ArrayList<>();
     private String player1;
     private String player2;
     public WettenPanel(ArrayList<String> players, String player1, String player2, int x, int y) {
-        this.players = players;
+        for (String p : players) {
+            this.players.add(p);
+        }
         this.player1 = player1;
         this.player2 = player2;
-        players.remove(player1);
-        players.remove(player2);
+        this.players.remove(player1);
+        this.players.remove(player2);
         setLayout(null);
         setBackground( new Color(134,252,221));
 
