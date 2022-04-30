@@ -4,12 +4,15 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class GamePanel extends JPanel {
     JButton nameBlue = new JButton();
     JButton nameRed = new JButton();
     JButton nameNextBlue = new JButton();
     JButton nameRedNextRed = new JButton();
+
+
 
     public GamePanel () {
         setSize(new Dimension(400,500));

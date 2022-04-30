@@ -18,6 +18,10 @@ public class TournamentPanel extends JPanel {
         players.add("b");
         players.add("c");
         players.add("d");
+        players.add("e");
+        players.add("f");
+        players.add("g");
+
         WettenPanel wettenpanel = new WettenPanel(players, "b","c",10,10);
 
 

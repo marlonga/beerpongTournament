@@ -8,6 +8,7 @@ public class GameLogic {
 
     GameLogic(ArrayList<String> players){
         this.players = players;
+        allMatches();
     }
 
     public static class matches {
@@ -53,18 +54,16 @@ public class GameLogic {
         ArrayList<matches> match = new ArrayList<>();
         for(int i = 0;i<players.size();i++){
             for(int j = 1;j< players.size();j++) {
-                matches temp = new matches(players.get(i), players.get(j));
-                match.add(temp);
+                if(!players.get(i).equals(players.get(j))) {
+                    matches temp = new matches(players.get(i), players.get(j));
+                    match.add(temp);
+                }
             }
             players.remove(players.get(i));
         }
-        for(int i=0;i<match.size();i++){
-            System.out.println(match.toString());
+        for (GameLogic.matches matches : match) {
+            System.out.println(matches.toString());
         }
-        return null;
+        return match;
     }
-
-
-
-
 }

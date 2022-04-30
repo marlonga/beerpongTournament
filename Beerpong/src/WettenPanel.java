@@ -15,10 +15,13 @@ public class WettenPanel extends JPanel {
         this.players = players;
         this.player1 = player1;
         this.player2 = player2;
+        GameLogic g = new GameLogic(players);
         players.remove(player1);
         players.remove(player2);
         setLayout(null);
         setBackground( new Color(134,252,221));
+
+
 
         setBounds(x, y, 200, 500);
         setMaximumSize(new Dimension(200, 500));
