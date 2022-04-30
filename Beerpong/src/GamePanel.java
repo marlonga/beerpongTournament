@@ -21,15 +21,15 @@ public class GamePanel extends JPanel {
         setBackground( new Color(134,140,252));
         GameLogic G = new GameLogic(players);
         ArrayList<GameLogic.matches> allMatches = G.allMatches();
-
+        int index = 0;
 
         nameBlue.setBackground(Color.BLUE);
         nameBlue.setBounds(60,100,140,45);
-        nameBlue.setText("nameOne");
+        nameBlue.setText(allMatches.get(index).getPlayer1());
 
         nameRed.setBackground(Color.RED);
         nameRed.setBounds(200,100,140,45);
-        nameRed.setText("nameTwo");
+        nameRed.setText(allMatches.get(index).getPlayer2());
 
         nameNextBlue.setBackground(Color.BLUE);
         nameNextBlue.setBounds(100,160,100,25);

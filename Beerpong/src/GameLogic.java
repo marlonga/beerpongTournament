@@ -25,6 +25,8 @@ public class GameLogic {
         public void setPlayer2(String player2) {
             this.player2 = player2;
         }
+        public String getPlayer1() {return player1;}
+        public String getPlayer2() {return player2;}
 
         @Override
         public String toString(){
