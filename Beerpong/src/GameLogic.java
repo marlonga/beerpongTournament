@@ -8,7 +8,6 @@ public class GameLogic {
 
     GameLogic(ArrayList<String> players){
         this.players = players;
-        allMatches();
     }
 
     public static class matches {

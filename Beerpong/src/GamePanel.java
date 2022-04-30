@@ -14,11 +14,14 @@ public class GamePanel extends JPanel {
 
 
 
-    public GamePanel () {
+    public GamePanel (ArrayList<String> players) {
         setSize(new Dimension(400,500));
         setLocation(220,10);
         setLayout(null);
         setBackground( new Color(134,140,252));
+        GameLogic G = new GameLogic(players);
+        ArrayList<GameLogic.matches> allMatches = G.allMatches();
+
 
         nameBlue.setBackground(Color.BLUE);
         nameBlue.setBounds(60,100,140,45);
