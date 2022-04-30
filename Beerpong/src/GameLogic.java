@@ -53,9 +53,9 @@ public class GameLogic {
     public ArrayList<matches> allMatches(){
         ArrayList<matches> match = new ArrayList<>();
         for(int i = 0;i<players.size();i++){
-            for(int j = 1;j< players.size();j++) {
-                if(!players.get(i).equals(players.get(j))) {
-                    matches temp = new matches(players.get(i), players.get(j));
+            for (String player : players) {
+                if (!players.get(i).equals(player)) {
+                    matches temp = new matches(players.get(i), player);
                     match.add(temp);
                 }
             }
