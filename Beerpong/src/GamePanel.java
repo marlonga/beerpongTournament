@@ -1,11 +1,7 @@
-import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 
 public class GamePanel extends JPanel {
@@ -39,18 +35,25 @@ public class GamePanel extends JPanel {
 
         nameNextBlue.setBackground(Color.BLUE);
         nameNextBlue.setBounds(100, 160, 100, 25);
-    }
-
-    public void drawPlayers() {
-        nameBlue.setText(allMatches.get(index).getPlayer1());
-        nameRed.setText(allMatches.get(index).getPlayer2());
-        nameNextBlue.setText(allMatches.get(index + 1).getPlayer1());
-        nameRedNextRed.setText(allMatches.get(index + 1).getPlayer2());
 
         add(nameBlue);
         add(nameRed);
         add(nameNextBlue);
         add(nameRedNextRed);
+    }
+
+    public void drawPlayers() {
+        if (allMatches.size()-1 > index) {
+            nameNextBlue.setText(allMatches.get(index + 1).getPlayer1());
+            nameRedNextRed.setText(allMatches.get(index + 1).getPlayer2());
+        }else {
+            remove(nameNextBlue);
+            remove(nameRedNextRed);
+        }
+        if(allMatches.size() > index) {
+            nameBlue.setText(allMatches.get(index).getPlayer1());
+            nameRed.setText(allMatches.get(index).getPlayer2());
+        }
         updateUI();
     }
 
@@ -58,9 +61,11 @@ public class GamePanel extends JPanel {
     ActionListener winnerButtons = new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
-            index++;
-            drawPlayers();
-            System.out.println(index);
+            if(allMatches.size() > index){
+                index++;
+                drawPlayers();
+                System.out.println(index);
+            }
            // updateUI();
         }
     };
