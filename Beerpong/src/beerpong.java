@@ -1,12 +1,11 @@
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class beerpong {
-    private static JFrame mainframe = new JFrame();
-    private static JPanel mainpanel = new StartPanel();
-    private static TournamentPanel tournamentpanel = new TournamentPanel();
+    private static final JFrame mainframe = new JFrame();
+    private static final JPanel mainpanel = new StartPanel();
+    private static final TournamentPanel tournamentpanel = new TournamentPanel();
 
     public static void main(String[] args) {
 
@@ -28,12 +27,9 @@ public class beerpong {
         mainpanel.updateUI();
         mainframe.setVisible(true);
     }
-    static ActionListener actionSwitchToTournement = new ActionListener() {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            mainframe.remove(mainpanel);
-            mainframe.add(tournamentpanel);
-            tournamentpanel.updateUI();
-        }
+    static ActionListener actionSwitchToTournement = e -> {
+        mainframe.remove(mainpanel);
+        mainframe.add(tournamentpanel);
+        tournamentpanel.updateUI();
     };
 }

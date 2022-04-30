@@ -7,8 +7,7 @@ import java.util.ArrayList;
 
 public class TournamentPanel extends JPanel {
 
-    private static  JPanel gamepanel = new JPanel();
-    private static  JPanel rankingpanel = new RankingPanel();
+    private static final JPanel rankingpanel = new RankingPanel();
     public TournamentPanel() {
         setLayout(null);
         setBackground(new Color(250,110,110));
@@ -21,7 +20,7 @@ public class TournamentPanel extends JPanel {
         players.add("e");
         players.add("f");
         players.add("g");
-        gamepanel = new GamePanel(players);
+        JPanel gamepanel = new GamePanel(players);
 
         WettenPanel wettenpanel = new WettenPanel(players, "b","c",10,10);
 
@@ -34,7 +33,7 @@ public class TournamentPanel extends JPanel {
     }
 
 
-    private static ActionListener actionEingabeDerNamen = new ActionListener() {
+    private static final ActionListener actionEingabeDerNamen = new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
         }

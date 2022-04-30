@@ -2,16 +2,14 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.Array;
 import java.util.ArrayList;
-import java.util.Stack;
 
 public class StartPanel extends JPanel {
-    private static ArrayList<JLabel> labelSpieler = new ArrayList<>();
-    private static ArrayList<JButton> minusSpieler = new ArrayList<>();
+    private static final ArrayList<JLabel> labelSpieler = new ArrayList<>();
+    private static final ArrayList<JButton> minusSpieler = new ArrayList<>();
     private static int spielerzahl = 0;
-    private int playercount = 0;
-    String comboBoxSize[] = {"1","2","3","4"};
+    private final int playercount = 0;
+    String[] comboBoxSize = {"1","2","3","4"};
     int TeamSize = 0;
     public StartPanel() {
         setLayout(null);
@@ -25,11 +23,7 @@ public class StartPanel extends JPanel {
         add(teamSize);
         updateUI();
     }
-
-    public static JLabel getPlayers(int x){
-        return labelSpieler.get(x);
-    }
-    private ActionListener actionEingabeDerNamen = new ActionListener() {
+    private final ActionListener actionEingabeDerNamen = new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
             if(!(spielerzahl >19)){
@@ -54,7 +48,7 @@ public class StartPanel extends JPanel {
             }
         }
     };
-    private ActionListener actionMinusSpieler = new ActionListener() {
+    private final ActionListener actionMinusSpieler = new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
             if(spielerzahl > 0){
