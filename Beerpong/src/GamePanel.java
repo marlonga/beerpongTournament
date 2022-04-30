@@ -25,25 +25,26 @@ public class GamePanel extends JPanel {
         GameLogic G = new GameLogic(players);
         allMatches = G.allMatches();
         drawPlayers();
-    }
+        nameBlue.addActionListener(winnerButtons);
+        nameRed.addActionListener(winnerButtons);
 
-    public void drawPlayers() {
         nameBlue.setBackground(Color.BLUE);
         nameBlue.setBounds(60, 100, 140, 45);
-        nameBlue.setText(allMatches.get(index).getPlayer1());
-        nameBlue.addActionListener(winnerButtons);
 
         nameRed.setBackground(Color.RED);
         nameRed.setBounds(200, 100, 140, 45);
-        nameRed.setText(allMatches.get(index).getPlayer2());
-        nameRed.addActionListener(winnerButtons);
-
-        nameNextBlue.setBackground(Color.BLUE);
-        nameNextBlue.setBounds(100, 160, 100, 25);
-        nameNextBlue.setText(allMatches.get(index + 1).getPlayer1());
 
         nameRedNextRed.setBackground(Color.RED);
         nameRedNextRed.setBounds(200, 160, 100, 25);
+
+        nameNextBlue.setBackground(Color.BLUE);
+        nameNextBlue.setBounds(100, 160, 100, 25);
+    }
+
+    public void drawPlayers() {
+        nameBlue.setText(allMatches.get(index).getPlayer1());
+        nameRed.setText(allMatches.get(index).getPlayer2());
+        nameNextBlue.setText(allMatches.get(index + 1).getPlayer1());
         nameRedNextRed.setText(allMatches.get(index + 1).getPlayer2());
 
         add(nameBlue);
@@ -59,6 +60,7 @@ public class GamePanel extends JPanel {
         public void actionPerformed(ActionEvent e) {
             index++;
             drawPlayers();
+            System.out.println(index);
            // updateUI();
         }
     };
