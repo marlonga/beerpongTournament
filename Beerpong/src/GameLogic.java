@@ -1,10 +1,7 @@
-import java.security.PublicKey;
 import java.util.ArrayList;
 
 public class GameLogic {
     ArrayList<String> players;
-
-    //NOCH TESTEN!!!!!!!
 
     GameLogic(ArrayList<String> players){
         this.players = players;
@@ -13,12 +10,10 @@ public class GameLogic {
     public static class matches {
         String player1;
         String player2;
-
         matches(String player1,String player2){
             this.player1 = player1;
             this.player2 = player2;
         }
-
         public void setPlayer1(String player1) {
             this.player1 = player1;
         }
@@ -27,13 +22,11 @@ public class GameLogic {
         }
         public String getPlayer1() {return player1;}
         public String getPlayer2() {return player2;}
-
         @Override
         public String toString(){
             return player1 + player2;
         }
     }
-
 
 
     public static class ranking {
@@ -46,6 +39,7 @@ public class GameLogic {
         public void increment(){
             this.points++;
         }
+        public int getPoints() {return points;}
     }
 
 
@@ -60,6 +54,7 @@ public class GameLogic {
                 }
             }
             players.remove(players.get(i));
+            i--;
         }
         for (GameLogic.matches matches : match) {
             System.out.println(matches.toString());
