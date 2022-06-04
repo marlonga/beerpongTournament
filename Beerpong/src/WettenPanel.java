@@ -11,6 +11,7 @@ public class WettenPanel extends JPanel {
     private ArrayList<JButton> redButtons = new ArrayList<>();
     private String player1;
     private String player2;
+
     public WettenPanel(ArrayList<String> players, String player1, String player2, int x, int y) {
         for (String p : players) {
             this.players.add(p);

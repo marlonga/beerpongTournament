@@ -5,7 +5,6 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 public class GamePanel extends JPanel {
-    ArrayList<String> players = new ArrayList<>();
     JButton nameBlue = new JButton();
     JButton nameRed = new JButton();
     JButton nameNextBlue = new JButton();
@@ -15,14 +14,11 @@ public class GamePanel extends JPanel {
 
 
     public GamePanel(ArrayList<String> players) {
-        for (String p : players) {
-            this.players.add(p);
-        }
         setSize(new Dimension(400, 500));
         setLocation(220, 10);
         setLayout(null);
         setBackground(new Color(134, 140, 252));
-        GameLogic G = new GameLogic(this.players);
+        GameLogic G = new GameLogic(players);
         allMatches = G.allMatches();
         drawPlayers();
         nameBlue.addActionListener(winnerButtons);
@@ -62,6 +58,7 @@ public class GamePanel extends JPanel {
     }
 
 
+
     ActionListener winnerButtons = new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -69,6 +66,7 @@ public class GamePanel extends JPanel {
                 index++;
                 drawPlayers();
                 System.out.println(index);
+
             }
            // updateUI();
         }
